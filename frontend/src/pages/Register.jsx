@@ -17,7 +17,7 @@ const Register = () => {
     setMessage('');
     setError('');
     try {
-      await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, { name, email, password });
       setMessage('Registration successful! Redirecting to login...');
       setTimeout(() => navigate('/login'), 2000);
     } catch (err) {
